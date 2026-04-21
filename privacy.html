@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vinyl Lia - 隐私政策</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="orb orb-a"></div>
+  <div class="orb orb-b"></div>
+
+  <header class="topbar glass">
+    <div class="brand">Vinyl Lia</div>
+    <nav class="nav">
+      <a href="./index.html">Home</a>
+      <a href="./terms.html">Terms</a>
+    </nav>
+    <div class="lang-switch">
+      <button id="lang-zh" class="active">中文</button>
+      <button id="lang-en">EN</button>
+    </div>
+  </header>
+
+  <main class="doc-container">
+    <section class="doc-header glass">
+      <h1 data-i18n="title">隐私政策</h1>
+      <p data-i18n="updated">最后更新：2026-04-21</p>
+    </section>
+
+    <article class="doc-content glass">
+      <section>
+        <h2 data-i18n="s1.title">1. 我们收集的信息</h2>
+        <p data-i18n="s1.body">为提供收藏管理、推荐与账号功能，我们可能处理账号标识信息、收藏数据及必要的诊断信息。</p>
+      </section>
+      <section>
+        <h2 data-i18n="s2.title">2. 信息用途</h2>
+        <p data-i18n="s2.body">这些信息用于维持核心功能运行，包括账号登录、数据同步、内容展示与功能优化。</p>
+      </section>
+      <section>
+        <h2 data-i18n="s3.title">3. 数据存储与安全</h2>
+        <p data-i18n="s3.body">我们会采取合理的技术与管理措施保护数据安全，并尽量减少不必要的数据处理。</p>
+      </section>
+      <section>
+        <h2 data-i18n="s4.title">4. 用户权利</h2>
+        <p data-i18n="s4.body">你可以通过应用内功能管理本地缓存与收藏信息，并可通过支持邮箱联系数据相关请求。</p>
+      </section>
+      <section>
+        <h2 data-i18n="s5.title">5. 联系我们</h2>
+        <p><span data-i18n="contact">联系邮箱</span>：<a href="mailto:support@vinyl.app">support@vinyl.app</a></p>
+      </section>
+    </article>
+  </main>
+
+  <script>
+    const dict = {
+      zh: {
+        title: "隐私政策",
+        updated: "最后更新：2026-04-21",
+        "s1.title": "1. 我们收集的信息",
+        "s1.body": "为提供收藏管理、推荐与账号功能，我们可能处理账号标识信息、收藏数据及必要的诊断信息。",
+        "s2.title": "2. 信息用途",
+        "s2.body": "这些信息用于维持核心功能运行，包括账号登录、数据同步、内容展示与功能优化。",
+        "s3.title": "3. 数据存储与安全",
+        "s3.body": "我们会采取合理的技术与管理措施保护数据安全，并尽量减少不必要的数据处理。",
+        "s4.title": "4. 用户权利",
+        "s4.body": "你可以通过应用内功能管理本地缓存与收藏信息，并可通过支持邮箱联系数据相关请求。",
+        "s5.title": "5. 联系我们",
+        contact: "联系邮箱"
+      },
+      en: {
+        title: "Privacy Policy",
+        updated: "Last updated: 2026-04-21",
+        "s1.title": "1. Information We Collect",
+        "s1.body": "To provide collection management, recommendations, and account features, we may process account identifiers, collection data, and necessary diagnostic data.",
+        "s2.title": "2. How We Use Information",
+        "s2.body": "Information is used to operate core features, including sign-in, sync, content display, and product improvements.",
+        "s3.title": "3. Storage & Security",
+        "s3.body": "We apply reasonable technical and organizational measures to protect data and minimize unnecessary processing.",
+        "s4.title": "4. Your Rights",
+        "s4.body": "You can manage local cache and collection data in-app, and contact support for data-related requests.",
+        "s5.title": "5. Contact",
+        contact: "Support Email"
+      }
+    };
+
+    function setLanguage(lang) {
+      document.documentElement.lang = lang === "en" ? "en" : "zh-CN";
+      const pack = dict[lang] || dict.zh;
+      document.querySelectorAll("[data-i18n]").forEach((el) => {
+        const key = el.getAttribute("data-i18n");
+        if (pack[key]) el.textContent = pack[key];
+      });
+      document.getElementById("lang-zh").classList.toggle("active", lang === "zh");
+      document.getElementById("lang-en").classList.toggle("active", lang === "en");
+      localStorage.setItem("vinyl_web_lang", lang);
+    }
+
+    document.getElementById("lang-zh").addEventListener("click", () => setLanguage("zh"));
+    document.getElementById("lang-en").addEventListener("click", () => setLanguage("en"));
+    setLanguage(localStorage.getItem("vinyl_web_lang") || "zh");
+  </script>
+</body>
+</html>

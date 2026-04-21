@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vinyl Lia - 黑胶收藏与发现</title>
+  <meta name="description" content="Vinyl Lia 是一款面向黑胶爱好者的收藏与发现应用，支持收藏管理、AI 推荐、听感分析与播放体验。" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="orb orb-a"></div>
+  <div class="orb orb-b"></div>
+
+  <header class="topbar glass">
+    <div class="brand">Vinyl Lia</div>
+    <nav class="nav">
+      <a href="#features" data-i18n="nav.features">功能</a>
+      <a href="#support" data-i18n="nav.support">支持</a>
+      <a href="#privacy" data-i18n="nav.privacy">隐私</a>
+      <a href="#faq" data-i18n="nav.faq">FAQ</a>
+    </nav>
+    <div class="lang-switch">
+      <button id="lang-zh" class="active">中文</button>
+      <button id="lang-en">EN</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero glass">
+      <p class="badge" data-i18n="hero.badge">黑胶收藏与发现</p>
+      <h1 data-i18n="hero.title">让每一张唱片，都有被珍藏的方式。</h1>
+      <p class="subtitle" data-i18n="hero.subtitle">Vinyl Lia 将收藏管理、智能推荐与播放体验融合在一起，帮助你更优雅地建立自己的数字唱片架。</p>
+      <div class="cta-row">
+        <a class="btn primary" href="#features" data-i18n="hero.cta.primary">查看功能</a>
+        <a class="btn" href="#support" data-i18n="hero.cta.secondary">联系我们</a>
+      </div>
+    </section>
+
+    <section id="features" class="section">
+      <h2 data-i18n="features.title">功能介绍</h2>
+      <div class="grid">
+        <article class="card glass">
+          <h3 data-i18n="features.collection.title">收藏管理</h3>
+          <p data-i18n="features.collection.desc">清晰呈现唱片库、最近入库与详情信息，收藏状态实时同步。</p>
+        </article>
+        <article class="card glass">
+          <h3 data-i18n="features.ai.title">AI 智能推荐</h3>
+          <p data-i18n="features.ai.desc">根据你的收藏风格生成荐碟建议，并提供黑胶语境下的听感分析。</p>
+        </article>
+        <article class="card glass">
+          <h3 data-i18n="features.nowPlaying.title">沉浸播放体验</h3>
+          <p data-i18n="features.nowPlaying.desc">Now Playing 区域支持封面展示与动效，强化听感氛围。</p>
+        </article>
+        <article class="card glass">
+          <h3 data-i18n="features.stats.title">统计洞察</h3>
+          <p data-i18n="features.stats.desc">从流派、年代与收藏趋势等维度，快速了解你的音乐偏好。</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="support" class="section">
+      <h2 data-i18n="support.title">支持</h2>
+      <div class="panel glass">
+        <p data-i18n="support.desc">如需帮助、功能建议或问题反馈，请通过以下方式联系我们：</p>
+        <ul>
+          <li><span data-i18n="support.email">邮箱</span>：<a href="mailto:support@vinyl.app">support@vinyl.app</a></li>
+          <li><span data-i18n="support.response">响应时间</span>：<span data-i18n="support.response.value">通常 1-3 个工作日</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="privacy" class="section">
+      <h2 data-i18n="privacy.title">隐私与条款</h2>
+      <div class="panel glass">
+        <p data-i18n="privacy.desc">为了提升透明度，我们提供独立的《隐私政策》和《用户协议》页面，便于随时查阅。</p>
+        <div class="policy-links">
+          <a class="btn" href="./privacy.html" data-i18n="privacy.link.policy">查看隐私政策</a>
+          <a class="btn" href="./terms.html" data-i18n="privacy.link.terms">查看用户协议</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="section">
+      <h2 data-i18n="faq.title">常见问题</h2>
+      <div class="faq">
+        <details class="glass">
+          <summary data-i18n="faq.q1">如何将唱片添加到收藏？</summary>
+          <p data-i18n="faq.a1">可通过推荐列表、手动录入或详情页收藏按钮添加到唱片柜。</p>
+        </details>
+        <details class="glass">
+          <summary data-i18n="faq.q2">AI 推荐如何生成？</summary>
+          <p data-i18n="faq.a2">系统会结合你的收藏信息生成推荐结果，并逐步回填更完整的唱片信息。</p>
+        </details>
+        <details class="glass">
+          <summary data-i18n="faq.q3">可以切换中英文吗？</summary>
+          <p data-i18n="faq.a3">支持。在应用 Profile 页可切换界面语言，中英文实时生效。</p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-links">
+      <a href="./privacy.html" data-i18n="footer.privacy">隐私政策</a>
+      <a href="./terms.html" data-i18n="footer.terms">用户协议</a>
+    </div>
+    <p>© <span id="year"></span> Vinyl Lia. All rights reserved.</p>
+  </footer>
+
+  <script src="./script.js"></script>
+</body>
+</html>

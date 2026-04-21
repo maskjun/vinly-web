@@ -1,0 +1,174 @@
+:root {
+  --bg: #050914;
+  --text: #eef3ff;
+  --muted: #a7b7db;
+  --line: rgba(162, 185, 239, 0.24);
+  --panel: rgba(13, 23, 43, 0.62);
+  --primary: #ffb020;
+  --primary-ink: #251600;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  min-height: 100vh;
+  color: var(--text);
+  background: radial-gradient(circle at 0% 0%, #0d1a3c 0%, var(--bg) 35%), linear-gradient(180deg, #050914 0%, #04070f 100%);
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "PingFang SC", "Segoe UI", sans-serif;
+}
+
+.orb {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(70px);
+  opacity: 0.5;
+  z-index: -1;
+}
+.orb-a { width: 280px; height: 280px; background: #2d6bff; top: -90px; left: -40px; }
+.orb-b { width: 320px; height: 320px; background: #ffb020; top: 20%; right: -120px; }
+
+.glass {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 18px;
+  margin: 10px auto 0;
+  width: min(1120px, 94vw);
+  border-radius: 14px;
+}
+.brand { font-weight: 800; letter-spacing: 0.3px; }
+.nav { display: flex; gap: 14px; }
+.nav a { color: var(--muted); text-decoration: none; font-size: 14px; }
+.nav a:hover { color: var(--text); }
+
+.lang-switch { display: flex; gap: 8px; }
+.lang-switch button {
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--muted);
+  border-radius: 8px;
+  padding: 6px 10px;
+  cursor: pointer;
+}
+.lang-switch button.active {
+  color: var(--primary-ink);
+  background: var(--primary);
+  border-color: var(--primary);
+}
+
+.container {
+  width: min(1080px, 92vw);
+  margin: 0 auto;
+  padding: 24px 0 64px;
+}
+
+.hero {
+  border-radius: 20px;
+  padding: clamp(26px, 6vw, 48px);
+}
+.badge {
+  display: inline-block;
+  padding: 6px 10px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: 12px;
+}
+.hero h1 {
+  margin: 16px 0 10px;
+  font-size: clamp(30px, 5.6vw, 56px);
+  line-height: 1.08;
+  letter-spacing: -0.5px;
+}
+.subtitle { color: var(--muted); max-width: 760px; font-size: 16px; line-height: 1.7; }
+
+.cta-row { display: flex; gap: 12px; margin-top: 18px; flex-wrap: wrap; }
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  border: 1px solid var(--line);
+  color: var(--text);
+  border-radius: 12px;
+  padding: 10px 16px;
+}
+.btn:hover { border-color: rgba(255,255,255,0.45); }
+.btn.primary {
+  background: var(--primary);
+  color: var(--primary-ink);
+  border-color: var(--primary);
+  font-weight: 700;
+}
+
+.section { margin-top: 26px; }
+.section h2 { margin: 0 0 14px; font-size: 25px; }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+.card, .panel {
+  border-radius: 16px;
+  padding: 16px;
+}
+.card h3 { margin: 0 0 6px; font-size: 17px; }
+.card p, .panel p, .panel li { color: var(--muted); line-height: 1.7; }
+.panel ul { margin: 8px 0 0 20px; padding: 0; }
+
+.policy-links { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 12px; }
+
+.faq details {
+  border-radius: 12px;
+  padding: 12px 14px;
+  margin-bottom: 10px;
+}
+.faq summary { cursor: pointer; font-weight: 600; }
+.faq p { margin: 8px 0 0; color: var(--muted); }
+
+.footer {
+  width: min(1080px, 92vw);
+  margin: 14px auto 24px;
+  border-top: 1px solid var(--line);
+  padding-top: 14px;
+  color: var(--muted);
+  font-size: 13px;
+  text-align: center;
+}
+.footer-links { display: flex; gap: 14px; justify-content: center; margin-bottom: 8px; }
+.footer-links a { color: var(--muted); text-decoration: none; }
+.footer-links a:hover { color: var(--text); }
+
+.doc-container {
+  width: min(900px, 92vw);
+  margin: 26px auto 40px;
+}
+.doc-header {
+  padding: 20px;
+  border-radius: 14px;
+}
+.doc-content {
+  margin-top: 14px;
+  padding: 20px;
+  border-radius: 14px;
+  line-height: 1.8;
+  color: var(--muted);
+}
+.doc-content h2, .doc-content h3 { color: var(--text); margin: 0 0 10px; }
+.doc-content section { margin-bottom: 18px; }
+
+@media (max-width: 860px) {
+  .nav { display: none; }
+  .grid { grid-template-columns: 1fr; }
+}
